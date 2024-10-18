@@ -1,0 +1,142 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.kupa {
+	width: 400px;
+	height: 200px;
+}
+
+body {
+	height: 100vh;
+	font-family: 'Ubuntu', sans-serif;
+	overflow: hidden;
+	color: #fff;
+	background: linear-gradient(10deg, #2483ff 60%, #2c6afb 60%);
+}
+
+nav {
+	margin-top: 100px;
+	background-color: #292929;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	font-size: 24px;
+}
+.menu-item {
+	display: inline-block;
+	height: 100px;
+	line-height: 100px;
+	width: 300px;
+	cursor: pointer;
+	transition: tlo 0.3s;
+}
+.menu-item:hover {
+	background-color: rgb(119, 109, 111);
+}
+.dropdown {
+	position: absolute;
+	width: 300px;
+}
+.dropdown li {
+	background-color: #292929;
+	opacity: 0;
+	display: none;
+	transition: 0.3s;
+}
+li:hover {
+	background-color: rgb(119, 109, 111);
+}
+.menu-item:hover .dropdown li {
+	display: block;
+	animation: menu1 0.3s forwards;
+}
+.menu-item:hover .dropdown li:nth-child(2) {
+	animation-delay: 0.2s;
+}
+.menu-item:hover .dropdown li:nth-child(3) {
+	animation-delay: 0.4s;
+}
+.menu-item:hover .dropdown li:nth-child(4) {
+	animation-delay: 0.6s;
+}
+.menu-item:hover .dropdown li:nth-child(5) {
+	animation-delay: 0.8s;
+}
+.menu-item:hover .dropdown li:nth-child(6) {
+	animation-delay: 1s;
+}
+/*  */
+
+.two:hover .dropdown li {
+	display: block;
+	animation: menu2 0.3s forwards;
+}
+/*  */
+.three:hover .dropdown li {
+	display: block;
+	animation: menu3 0.3s forwards;
+}
+@keyframes menu3 {
+	from {
+		opacity: 0;
+		transform: rotateY(-60deg), translateX(60px);
+	}
+	to {
+		opacity: 1;
+		transform: rotateY(0), translateX(0);
+	}
+}
+@keyframes menu2 {
+	from {
+		opacity: 0;
+		transform: translateY(60px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes menu1 {
+	from {
+		opacity: 0;
+		transform: rotate(35deg);
+	}
+	to {
+		opacity: 1;
+		transform: rotate(0);
+	}
+}
+.tooltip-box {
+	display: flex;
+	justify-content: space-between;
+	width: 400px;
+	padding: 100px;
+}
+.tooltip {
+	position: relative;
+}
+.tooltip::before {
+	display: none;
+
+	position: absolute;
+	width: 100%;
+	padding: 5px;
+	border-radius: 15px;
+	background-color: grey;
+	font-size: 14px;
+}
+.tooltip:hover::before {
+	display: block;
+}
+.tooltip-top::before {
+	content: 'tooltip top';
+	bottom: 130%;
+}
+.tooltip-right::before {
+	content: 'tooltip right';
+	left: 130%;
+}
